@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ohio Housing Market Analysis | Ohio Housing Nerd</title>
+<meta name="description" content="Data-driven Ohio housing market analysis. Inventory, prices, foreclosures, and what it all means for buyers and sellers across all 88 Ohio counties.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root { --scarlet: #BB0000; --dark: #0a0a0a; --gray: #666; --light: #f4f4f4; --white: #ffffff; --border: #e0e0e0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--dark); }
+
+nav {
+  background: var(--dark);
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-logo {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--white);
+  text-decoration: none;
+}
+.nav-logo span { color: var(--scarlet); }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+}
+.nav-links a:hover { color: var(--white); }
+.nav-cta {
+  background: var(--scarlet) !important;
+  color: var(--white) !important;
+  padding: 8px 18px;
+  border-radius: 2px;
+}
+
+.page-header {
+  background: var(--dark);
+  padding: 64px 40px;
+  text-align: center;
+}
+.tag {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--scarlet);
+  margin-bottom: 16px;
+  display: block;
+}
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: clamp(28px, 4vw, 44px);
+  color: var(--white);
+  margin-bottom: 16px;
+}
+.header-sub {
+  font-size: 18px;
+  color: rgba(255,255,255,0.5);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.posts { max-width: 780px; margin: 0 auto; padding: 60px 40px 80px; }
+
+.post-card {
+  border-bottom: 1px solid var(--border);
+  padding: 40px 0;
+}
+.post-card:first-child { padding-top: 0; }
+.post-meta {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--scarlet);
+  margin-bottom: 12px;
+  display: block;
+}
+.post-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  color: var(--dark);
+  margin-bottom: 14px;
+  line-height: 1.25;
+  text-decoration: none;
+  display: block;
+}
+.post-title:hover { color: var(--scarlet); }
+.post-excerpt {
+  font-size: 17px;
+  color: #444;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+.read-more {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--scarlet);
+  text-decoration: none;
+}
+.read-more:hover { text-decoration: underline; }
+
+.subscribe-bar {
+  background: var(--scarlet);
+  padding: 48px 40px;
+  text-align: center;
+}
+.subscribe-bar h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+.subscribe-bar p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 24px;
+}
+.subscribe-bar a {
+  display: inline-block;
+  background: var(--white);
+  color: var(--scarlet);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+footer {
+  background: var(--dark);
+  padding: 40px;
+  text-align: center;
+}
+.footer-logo {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--white);
+}
+.footer-logo span { color: var(--scarlet); }
+.footer-legal {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  color: rgba(255,255,255,0.25);
+  margin-top: 16px;
+}
+</style>
+</head>
+<body>
+
+<div style="background:#1a1a1a; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 7px 40px; text-align:center; font-family:'Montserrat',sans-serif; font-size:11px; font-weight:600; letter-spacing:1px; color:rgba(255,255,255,0.45);">
+  <span style="font-size:17px;font-weight:700;color:#BB0000;">Kiger Realty</span> &nbsp;·&nbsp; Jasson Farrier &nbsp;·&nbsp; Realtor &nbsp;·&nbsp; License #2018004483 &nbsp;·&nbsp; 614-699-3007
+</div>
+
+<nav>
+  <a href="/" class="nav-logo">Ohio <span>Housing</span> Nerd</a>
+  <div class="nav-links">
+    <a href="/ohio-housing-market-updates">Market Updates</a>
+    <a href="/about">About</a>
+    <a href="/contact">Work With Me</a>
+    <a href="/free" class="nav-cta">Free Guide</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <span class="tag">Ohio Housing Market</span>
+  <h1>Market Updates</h1>
+  <p class="header-sub">Weekly breakdowns of what's actually happening across all 88 Ohio counties.</p>
+</div>
+
+<div class="posts">
+
+  <div class="post-card">
+    <span class="post-meta">Ohio Market Analysis · March 2026</span>
+    <a href="/blog-ohio-spring-2026" class="post-title">Ohio Housing Market March 2026: Low Inventory, Record Prices, and the Problem Nobody Is Talking About</a>
+    <p class="post-excerpt">It's March and the Ohio housing market should be waking up. It's not. After going through all 88 Ohio counties, here's what the data actually shows — and it's not the story anyone is telling. 94% of Ohio counties have fewer homes for sale than before COVID ever happened.</p>
+    <a href="/blog-ohio-spring-2026" class="read-more">Read the Full Analysis →</a>
+  </div>
+
+  <div class="post-card">
+    <span class="post-meta">Ohio Market Analysis · February 2026</span>
+    <a href="/blog-ohio-feb-2026" class="post-title">Ohio's Housing Market Is Under Strain — But It's Not Crashing</a>
+    <p class="post-excerpt">Housing markets don't collapse simply because buyers hesitate. They collapse when sellers are forced to sell in large numbers. That requires three things happening together: a wave of forced selling, inventory overwhelming demand, and broad, synchronized price declines. Ohio doesn't have that combination right now.</p>
+    <a href="/blog-ohio-feb-2026" class="read-more">Read the Full Analysis →</a>
+  </div>
+
+  <div class="post-card">
+    <span class="post-meta">Ohio Market Analysis · December 2025</span>
+    <a href="/blog-ohio-dec-2025" class="post-title">What's Really Happening with The Ohio Housing Market</a>
+    <p class="post-excerpt">Homeowners locked into 2–4% mortgage rates are staying put. New construction has not kept pace. And with only a trickle of listings entering the market each month, buyers often face a shrinking pool of options rather than an expanding one.</p>
+    <a href="/blog-ohio-dec-2025" class="read-more">Read the Full Analysis →</a>
+  </div>
+
+  <div class="post-card">
+    <span class="post-meta">Ohio Policy · September 2025</span>
+    <a href="/blog-property-tax-sep-2025" class="post-title">Property Tax Showdown: Ohio Mom Takes On Politicians</a>
+    <p class="post-excerpt">If nothing changes, the County Auditors Association president warned that property taxes could jump another 25–30% by the next sexennial reappraisal. In Licking County, we've got a triennial next year — another hit even before that "big kahuna" sexennial.</p>
+    <a href="/blog-property-tax-sep-2025" class="read-more">Read the Full Analysis →</a>
+  </div>
+
+</div>
+
+<div class="subscribe-bar">
+  <h2>Get the Analysis in Your Inbox</h2>
+  <p>Weekly Ohio housing data — all 88 counties, data-driven, no hype.</p>
+  <form id="nl-form" onsubmit="handleNL(event)" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;max-width:480px;margin:0 auto;">
+    <input type="email" id="nl-email" placeholder="your@email.com" required style="flex:1;min-width:220px;padding:12px 16px;border:1px solid rgba(255,255,255,0.2);border-radius:2px;background:rgba(255,255,255,0.08);color:#fff;font-family:'Montserrat',sans-serif;font-size:14px;" />
+    <button type="submit" id="nl-btn" style="padding:12px 28px;background:#BB0000;color:#fff;border:none;border-radius:2px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;cursor:pointer;">Subscribe →</button>
+  </form>
+  <p id="nl-thanks" style="display:none;color:#fff;font-weight:700;font-size:15px;margin-top:8px;">You're in. Check your inbox.</p>
+  <script>
+  async function handleNL(e){e.preventDefault();var b=document.getElementById('nl-btn');b.textContent='Subscribing...';b.disabled=true;try{await fetch('/.netlify/functions/submit-contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:document.getElementById('nl-email').value.trim(),first_name:'',last_name:'',phone:'',lead_source:'Blog — ohiohousingnerd.com',source_site:'ohiohousingnerd.com',contact_type:'Subscriber',notes:'Newsletter signup from blog',newsletter:true})})}catch(err){console.error(err)}document.getElementById('nl-form').style.display='none';document.getElementById('nl-thanks').style.display='block'}
+  </script>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Ohio <span>Housing</span> Nerd</div>
+    <div class="footer-links-row">
+      <a href="/ohio-housing-market-updates">Market Updates</a>
+      <a href="/about">About</a>
+      <a href="/contact">Work With Me</a>
+      <a href="/free">Free Guide</a>
+      <a href="/privacy">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="footer-compliance" style="max-width:900px; margin: 24px auto 0; display:flex; align-items:flex-start; gap:24px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.07);">
+    <img src="/fair-housing.webp" alt="Equal Housing Opportunity" style="width:60px;flex-shrink:0;filter:invert(1) opacity(0.35);" />
+    <p style="font-family:'Montserrat',sans-serif; font-size:12px; color:rgba(255,255,255,0.55); line-height:1.8;">
+      <strong style="color:rgba(255,255,255,0.7);">Jasson Farrier &nbsp;·&nbsp; Kiger Realty &nbsp;·&nbsp; License #2018004483 &nbsp;·&nbsp; 614-699-3007</strong><br>
+      We comply fully with the Federal Fair Housing Act and all Ohio fair housing laws. We provide equal professional service to all clients without discrimination based on race, color, religion, sex, disability, familial status, national origin, military status, ancestry, or any other protected class.<br><br>
+      © 2026 Ohio Housing Nerd &nbsp;·&nbsp; Kiger Realty is a licensed real estate brokerage in the State of Ohio.<br>
+      Content on this site is for informational and entertainment purposes only. It does not constitute legal, financial, or real estate advice. Always consult a licensed professional before making any real estate decision. &nbsp;·&nbsp; <a href="/privacy" style="color:rgba(255,255,255,0.7); text-decoration:underline;">Privacy Policy</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

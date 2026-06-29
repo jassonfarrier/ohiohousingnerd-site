@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Property Tax Showdown: Ohio Mom Takes On Politicians | Ohio Housing Nerd</title>
+<meta name="description" content="The petition to abolish Ohio property taxes, the data behind it, and what it means for Ohio homeowners. From Jasson Farrier.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root { --scarlet: #BB0000; --scarlet-deep: #990000; --gray: #666; --dark: #0a0a0a; --light: #f6f6f6; --border: #e0e0e0; --white: #ffffff; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--dark); line-height: 1.7; }
+nav { background: var(--scarlet); padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+.nav-logo { font-weight: 900; font-size: 15px; letter-spacing: 2px; text-transform: uppercase; color: var(--white); text-decoration: none; }
+.nav-logo span { color: var(--gray); }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { font-weight: 600; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.6); text-decoration: none; }
+.nav-links a:hover { color: var(--white); }
+.nav-cta { background: var(--white) !important; color: var(--scarlet) !important; padding: 8px 18px; border-radius: 2px; }
+.agent-bar { background: var(--scarlet-deep); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 9px 40px; text-align: center; font-size: 12px; font-weight: 400; letter-spacing: 1px; color: rgba(255,255,255,0.55); }
+.agent-bar span { color: var(--white); font-size: 13px; font-weight: 600; letter-spacing: 1px; }
+.page-header { background: var(--scarlet); padding: 80px 40px; }
+.page-header-inner { max-width: 720px; margin: 0 auto; }
+.tag { font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--gray); margin-bottom: 16px; display: block; }
+.page-header h1 { font-weight: 900; font-size: clamp(26px, 3.5vw, 42px); color: var(--white); line-height: 1.15; margin-bottom: 16px; }
+.header-sub { font-size: 16px; color: rgba(255,255,255,0.55); }
+.subscribe-bar { background: var(--scarlet); padding: 60px 40px; text-align: center; }
+.subscribe-bar h2 { font-weight: 900; font-size: clamp(22px, 3vw, 32px); color: var(--white); margin-bottom: 12px; }
+.subscribe-bar p { font-size: 17px; color: rgba(255,255,255,0.6); margin-bottom: 28px; }
+.subscribe-bar a { display: inline-block; background: var(--white); color: var(--scarlet); font-weight: 700; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; padding: 14px 28px; text-decoration: none; border-radius: 2px; }
+footer { background: var(--dark); padding: 48px 40px 32px; border-top: 3px solid var(--scarlet); }
+.footer-inner { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+.footer-logo { font-weight: 900; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; color: var(--white); }
+.footer-logo span { color: var(--gray); }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer-links a { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.4); text-decoration: none; }
+.footer-links a:hover { color: var(--white); }
+.footer-compliance { max-width: 1000px; margin: 24px auto 0; display: flex; align-items: flex-start; gap: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.07); }
+.footer-compliance p { font-size: 10px; color: rgba(255,255,255,0.25); line-height: 1.8; }
+@media (max-width: 768px) { nav { padding: 0 20px; } .nav-links { display: none; } .page-header { padding: 60px 20px; } .footer-inner { flex-direction: column; } .agent-bar { padding: 7px 20px; font-size: 11px; } }
+
+.article { max-width: 720px; margin: 0 auto; padding: 80px 40px; }
+.article h2 { font-weight: 900; font-size: clamp(20px, 2.5vw, 26px); color: var(--dark); margin: 40px 0 16px; line-height: 1.25; }
+.article h3 { font-weight: 700; font-size: clamp(17px, 2vw, 20px); color: var(--dark); margin: 28px 0 12px; line-height: 1.3; }
+.article p { font-size: 16px; color: #333; line-height: 1.8; margin-bottom: 20px; }
+.article ul, .article ol { margin: 0 0 20px 24px; }
+.article li { font-size: 16px; color: #333; line-height: 1.8; margin-bottom: 8px; }
+.article blockquote { border-left: 4px solid var(--scarlet); padding: 16px 24px; margin: 28px 0; background: #f8f9fa; }
+.article blockquote p { font-size: 18px; font-weight: 700; color: var(--scarlet); margin: 0; line-height: 1.5; }
+.article .stat-row { display: flex; gap: 24px; flex-wrap: wrap; margin: 28px 0; }
+.article .stat-box { flex: 1; min-width: 140px; background: var(--scarlet); color: var(--white); padding: 24px; border-radius: 4px; text-align: center; }
+.article .stat-num { font-weight: 900; font-size: 32px; line-height: 1; margin-bottom: 8px; }
+.article .stat-label { font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; opacity: 0.7; }
+.back-link { display: inline-block; font-weight: 700; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray); text-decoration: none; margin-bottom: 20px; }
+.back-link:hover { color: var(--white); }
+@media (max-width: 768px) { .article { padding: 60px 20px; } .article .stat-row { flex-direction: column; } }
+
+</style>
+</head>
+<body>
+
+<div class="agent-bar"><span>Jasson Farrier</span> &nbsp;·&nbsp; Realtor &nbsp;·&nbsp; <span>Kiger Realty</span> &nbsp;·&nbsp; License #2018004483 &nbsp;·&nbsp; 614-699-3007</div>
+
+<nav>
+  <a href="/" class="nav-logo">Ohio <span>Housing</span> Nerd</a>
+  <div class="nav-links">
+    <a href="/ohio-housing-market-updates">Market Updates</a>
+    <a href="/about">About</a>
+    <a href="/contact">Work With Me</a>
+    <a href="/free" class="nav-cta">Free Guide</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <a href="/ohio-housing-market-updates" class="back-link">← Back to Market Updates</a>
+    <span class="tag">Ohio Policy · September 2025</span>
+    <h1>Property Tax Showdown: Ohio Mom Takes On Politicians</h1>
+    <p class="header-sub">September 22, 2025</p>
+  </div>
+</div>
+
+<div class="article">
+<p>I've been covering Ohio housing for years, and every so often you meet a neighbor who turns into a movement. That's exactly what happened when I sat down with Lizzie Margolius — mom, volunteer, and the Licking County lead for the petition to abolish property taxes in Ohio. Her story, and the avalanche of numbers behind it, explain why so many Ohio families feel like they're stuck renting their homes from the government.</p>
+
+<h2>Why This Fight Matters to Homeowners Like Us</h2>
+<p>We opened with a stat that still makes my jaw drop: the average Ohioan pays nearly $453,000 in taxes over a lifetime — $147,000 of that is just property tax. Let that sink in. No wonder people say they don't truly own their homes; they're paying a perpetual fee to keep living in them.</p>
+<p>That's also one of Axe Ohio Tax's core moral arguments that Lizzie shared: if you can lose your home for falling behind on a tax bill, then you never really own it — and any tax that can make you homeless is immoral. Whether you agree or not, it's a clear, gut-level framing of what's at stake.</p>
+
+<h2>Meet the Mom Taking On the Machine</h2>
+<p>Lizzie didn't come out of the political class. She's a Northeast Ohio native who moved back home for the Midwestern values and her kids' childhood, and then — like a lot of parents — she started volunteering. One thing led to another, she met the Axe Ohio Tax team, and now she's helping lead a statewide citizen effort. No one is getting paid; it's volunteers across all 88 counties.</p>
+<p>If you want proof this isn't just online chatter, consider August at the Hartford Fair: over 2,000 petition signatures collected in a single burst. Ordinary people are showing up, signing, and telling their stories.</p>
+
+<h2>The Next Tax Punch Is Already Telegraphed</h2>
+<p>Here's the kicker: if nothing changes, the County Auditors Association president warned that property taxes could jump another 25–30% by the next sexennial reappraisal. In Licking County, we've got a triennial next year — another hit even before that "big kahuna" sexennial. In plain English: Ohio effectively audits property values every three years, and the meter keeps ticking up.</p>
+<p>I don't know a single family whose wages are rising on that schedule.</p>
+
+<h2>Where Do Our Property Taxes Actually Go?</h2>
+<p>If you've ever wondered why your bills rise even when enrollment falls, you're not imagining things. Public school spending has steadily increased — nearly doubling over 20 years — largely driven by salaries and benefits, while enrollment has declined. Proficiency in core subjects is also worryingly low. And here's the connective tissue most voters don't see: about 85% of your property tax goes to schools. If you're frustrated with both taxes and outcomes, that's why they feel linked.</p>
+
+<h2>The Petition: What It Says and How It Works</h2>
+<p>The ballot language aims to abolish property taxes on all real property — residential, commercial, agricultural, land, and improvements — and prohibit new property taxes in the future. It's written to be effective the first day of the following year, which avoids the trap of having to redo signatures if timelines slip.</p>
+<p>Also important: by signing the petition, you're not voting for the amendment — you're saying you want it on the ballot so Ohioans can decide. If it makes the May or November ballot next year and passes, implementation would still begin January 1, 2027, giving legislators a full year to figure out transition details.</p>
+
+<h2>"But How Will We Fund Things?"</h2>
+<p>We talked through this a lot. There are many revenue levers (consumption taxes, targeted fees, closing loopholes), and frankly, spending discipline has to be part of the conversation. Even without changing rates, broader population and business growth can lift sales-tax receipts.</p>
+<p>If your community wants to fund something specific, you can still vote for it directly — for instance, local income-based school taxes already exist in places like Johnstown. The point is to stop tying the tax to unrealized gains in a volatile housing market. No one knocks on your door to tax your 401(k) because the balance went up on paper — yet that's how property taxes work today.</p>
+
+<h2>Why the Political Class Keeps Punting</h2>
+<p>I wish I could say there's urgency at the Statehouse, but the pattern is... committees. Then more committees. And too often, nothing concrete comes out the other side. Meanwhile, the cost of doing nothing compounds — especially when Ohio is losing population and income relative to other states. That shrinking base means a heavier load on those who stay.</p>
+
+<h2>What I Took Away from Lizzie</h2>
+<p>Three things stuck with me. First — this is bottom-up. A mom with a spreadsheet and a spine is rallying neighbors, not lobbyists. Thousands of signatures at a county fair prove it.</p>
+<p>Second — the current trajectory is unsustainable. Even the auditors are warning of another 25–30% jump if nothing changes. That's not a conspiracy theory; it's an official forecast.</p>
+<p>Third — ballot access is the immediate goal. You don't have to agree on every replacement model to agree that Ohioans deserve a vote on whether our homes should be collateral for government growth.</p>
+
+<h2>How to Plug In</h2>
+<p>However you feel about property taxes, this is a conversation Ohio has to have in the open. I'm going to keep digging, interviewing, and putting real numbers in front of you. And I'll keep giving everyday Ohioans — like Lizzie — the mic.</p>
+<p>Because at the end of the day, this isn't about slogans. It's about whether families can afford to keep the front door keys to the homes they already bought.</p>
+</div>
+
+<div class="subscribe-bar">
+  <h2>Get the Analysis in Your Inbox</h2>
+  <p>Weekly housing market data — county-level, data-driven, no hype.</p>
+  <form id="nl-form" onsubmit="handleNL(event)" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;max-width:480px;margin:0 auto;">
+    <input type="email" id="nl-email" placeholder="your@email.com" required style="flex:1;min-width:220px;padding:12px 16px;border:1px solid rgba(255,255,255,0.2);border-radius:2px;background:rgba(255,255,255,0.08);color:#fff;font-family:'Montserrat',sans-serif;font-size:14px;" />
+    <button type="submit" id="nl-btn" style="padding:12px 28px;background:#fff;color:#BB0000;border:none;border-radius:2px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;cursor:pointer;">Subscribe →</button>
+  </form>
+  <p id="nl-thanks" style="display:none;color:#fff;font-weight:700;font-size:15px;margin-top:8px;">You're in. Check your inbox.</p>
+  <script>
+  async function handleNL(e){e.preventDefault();var b=document.getElementById('nl-btn');b.textContent='Subscribing...';b.disabled=true;try{await fetch('/.netlify/functions/submit-contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:document.getElementById('nl-email').value.trim(),first_name:'',last_name:'',phone:'',lead_source:'Blog — ohiohousingnerd.com',source_site:'ohiohousingnerd.com',contact_type:'Subscriber',notes:'Newsletter signup from blog',newsletter:true})})}catch(err){console.error(err)}document.getElementById('nl-form').style.display='none';document.getElementById('nl-thanks').style.display='block'}
+  </script>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Ohio <span>Housing</span> Nerd</div>
+    <div class="footer-links">
+      <a href="/ohio-housing-market-updates">Market Updates</a>
+      <a href="/about">About</a>
+      <a href="/contact">Work With Me</a>
+      <a href="/free">Free Guide</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="footer-compliance">
+    <p><strong style="color:rgba(255,255,255,0.5);">Jasson Farrier · Kiger Realty · License #2018004483 · 614-699-3007</strong><br>
+    We comply fully with the Federal Fair Housing Act and all Ohio fair housing laws. We provide equal professional service to all clients without discrimination based on race, color, religion, sex, disability, familial status, national origin, military status, ancestry, or any other protected class.<br><br>
+    © 2026 JassonFarrier.com · <a href="/privacy" style="color:rgba(255,255,255,0.35);">Privacy Policy</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

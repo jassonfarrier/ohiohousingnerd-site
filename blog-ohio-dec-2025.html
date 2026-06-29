@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What's Really Happening with The Ohio Housing Market | Ohio Housing Nerd</title>
+<meta name="description" content="Why prices are holding, where softness is emerging, and how taxes and inventory will shape 2026. Ohio housing analysis from Jasson Farrier.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root { --scarlet: #BB0000; --scarlet-deep: #990000; --gray: #666; --dark: #0a0a0a; --light: #f6f6f6; --border: #e0e0e0; --white: #ffffff; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--dark); line-height: 1.7; }
+nav { background: var(--scarlet); padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+.nav-logo { font-weight: 900; font-size: 15px; letter-spacing: 2px; text-transform: uppercase; color: var(--white); text-decoration: none; }
+.nav-logo span { color: var(--gray); }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { font-weight: 600; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.6); text-decoration: none; }
+.nav-links a:hover { color: var(--white); }
+.nav-cta { background: var(--white) !important; color: var(--scarlet) !important; padding: 8px 18px; border-radius: 2px; }
+.agent-bar { background: var(--scarlet-deep); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 9px 40px; text-align: center; font-size: 12px; font-weight: 400; letter-spacing: 1px; color: rgba(255,255,255,0.55); }
+.agent-bar span { color: var(--white); font-size: 13px; font-weight: 600; letter-spacing: 1px; }
+.page-header { background: var(--scarlet); padding: 80px 40px; }
+.page-header-inner { max-width: 720px; margin: 0 auto; }
+.tag { font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--gray); margin-bottom: 16px; display: block; }
+.page-header h1 { font-weight: 900; font-size: clamp(26px, 3.5vw, 42px); color: var(--white); line-height: 1.15; margin-bottom: 16px; }
+.header-sub { font-size: 16px; color: rgba(255,255,255,0.55); }
+.subscribe-bar { background: var(--scarlet); padding: 60px 40px; text-align: center; }
+.subscribe-bar h2 { font-weight: 900; font-size: clamp(22px, 3vw, 32px); color: var(--white); margin-bottom: 12px; }
+.subscribe-bar p { font-size: 17px; color: rgba(255,255,255,0.6); margin-bottom: 28px; }
+.subscribe-bar a { display: inline-block; background: var(--white); color: var(--scarlet); font-weight: 700; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; padding: 14px 28px; text-decoration: none; border-radius: 2px; }
+footer { background: var(--dark); padding: 48px 40px 32px; border-top: 3px solid var(--scarlet); }
+.footer-inner { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+.footer-logo { font-weight: 900; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; color: var(--white); }
+.footer-logo span { color: var(--gray); }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer-links a { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.4); text-decoration: none; }
+.footer-links a:hover { color: var(--white); }
+.footer-compliance { max-width: 1000px; margin: 24px auto 0; display: flex; align-items: flex-start; gap: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.07); }
+.footer-compliance p { font-size: 10px; color: rgba(255,255,255,0.25); line-height: 1.8; }
+@media (max-width: 768px) { nav { padding: 0 20px; } .nav-links { display: none; } .page-header { padding: 60px 20px; } .footer-inner { flex-direction: column; } .agent-bar { padding: 7px 20px; font-size: 11px; } }
+
+.article { max-width: 720px; margin: 0 auto; padding: 80px 40px; }
+.article h2 { font-weight: 900; font-size: clamp(20px, 2.5vw, 26px); color: var(--dark); margin: 40px 0 16px; line-height: 1.25; }
+.article h3 { font-weight: 700; font-size: clamp(17px, 2vw, 20px); color: var(--dark); margin: 28px 0 12px; line-height: 1.3; }
+.article p { font-size: 16px; color: #333; line-height: 1.8; margin-bottom: 20px; }
+.article ul, .article ol { margin: 0 0 20px 24px; }
+.article li { font-size: 16px; color: #333; line-height: 1.8; margin-bottom: 8px; }
+.article blockquote { border-left: 4px solid var(--scarlet); padding: 16px 24px; margin: 28px 0; background: #f8f9fa; }
+.article blockquote p { font-size: 18px; font-weight: 700; color: var(--scarlet); margin: 0; line-height: 1.5; }
+.article .stat-row { display: flex; gap: 24px; flex-wrap: wrap; margin: 28px 0; }
+.article .stat-box { flex: 1; min-width: 140px; background: var(--scarlet); color: var(--white); padding: 24px; border-radius: 4px; text-align: center; }
+.article .stat-num { font-weight: 900; font-size: 32px; line-height: 1; margin-bottom: 8px; }
+.article .stat-label { font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; opacity: 0.7; }
+.back-link { display: inline-block; font-weight: 700; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray); text-decoration: none; margin-bottom: 20px; }
+.back-link:hover { color: var(--white); }
+@media (max-width: 768px) { .article { padding: 60px 20px; } .article .stat-row { flex-direction: column; } }
+
+</style>
+</head>
+<body>
+
+<div class="agent-bar"><span>Jasson Farrier</span> &nbsp;·&nbsp; Realtor &nbsp;·&nbsp; <span>Kiger Realty</span> &nbsp;·&nbsp; License #2018004483 &nbsp;·&nbsp; 614-699-3007</div>
+
+<nav>
+  <a href="/" class="nav-logo">Ohio <span>Housing</span> Nerd</a>
+  <div class="nav-links">
+    <a href="/ohio-housing-market-updates">Market Updates</a>
+    <a href="/about">About</a>
+    <a href="/contact">Work With Me</a>
+    <a href="/free" class="nav-cta">Free Guide</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <a href="/ohio-housing-market-updates" class="back-link">← Back to Market Updates</a>
+    <span class="tag">Ohio Market Analysis · December 2025</span>
+    <h1>What's Really Happening with The Ohio Housing Market</h1>
+    <p class="header-sub">December 8, 2025</p>
+  </div>
+</div>
+
+<div class="article">
+<p>Ohio's housing market continues to behave in a way that catches many buyers, sellers, and analysts off guard. While states like Texas and Florida are digesting oversupply and seeing prices slip, Ohio is dealing with the opposite problem: a housing market that never rebuilt its inventory.</p>
+<p>And because supply remains extremely limited, most Ohio counties are still seeing price stability — and in many cases, new record highs — despite affordability challenges and rising costs. It's a market defined less by demand surges and more by the simple absence of homes.</p>
+
+<h2>Inventory Is Still the Entire Story</h2>
+<p>No other factor explains Ohio's market better than this: There still aren't enough homes for sale.</p>
+<p>Homeowners locked into 2–4% mortgage rates are staying put. New construction has not kept pace. And with only a trickle of listings entering the market each month, buyers often face a shrinking pool of options rather than an expanding one.</p>
+<p>As a result: price declines remain rare, competition never fully disappears, and first-time buyers continue facing limited choices. Ohio isn't a hot market — it's a supply-starved market, which can look very similar on paper.</p>
+
+<h2>County Strength vs. ZIP-Code Softness</h2>
+<p>When you look at Ohio by county, the picture appears overwhelmingly stable. Prices are up year-over-year in 84 out of 88 counties.</p>
+<p>But when you zoom into specific ZIP codes, the structure starts to shift. Cities like Cleveland, Akron, Toledo, Dayton, and Cincinnati have neighborhoods where prices are slipping — even as the county overall rises.</p>
+<p>These pockets are usually older housing stock, areas with affordability pressure, and places where supply rises even slightly. This isn't evidence of a statewide downturn. It's evidence of a market splitting at the neighborhood level, not the county level.</p>
+
+<h2>Central Ohio: Small Inventory Gains, Big Implications</h2>
+<p>Central Ohio is the one region where change is showing up clearly. Inventory here is rising faster than in most other parts of the state — not dramatically, but noticeably.</p>
+<p>And even that modest shift is enough to flatten price growth in Columbus, push a few ZIP codes slightly negative, and give buyers a little more leverage. This isn't the beginning of a crash — it's the beginning of normalization, something Ohio hasn't seen since before the pandemic.</p>
+<p>Surrounding counties like Licking and Delaware aren't weakening, but they're certainly no longer seeing the rapid appreciation of the last few years.</p>
+
+<h2>Why Ohio's Inventory Still Isn't Recovering</h2>
+<p>Ohio's supply problem isn't a short-term issue — it's structural. Only 2% of homes in Ohio were built after 2020. Most homes on the market are older and require more maintenance. Existing owners with low rates refuse to move.</p>
+<p>Combine those factors, and you get a market where inventory simply cannot grow at the pace needed to balance prices. Until more homes are built or more owners decide to list, Ohio will continue to operate with structural scarcity — even if demand cools.</p>
+
+<h2>Property Taxes: The Pain Point No One Can Ignore</h2>
+<p>If there is one issue uniting all 88 counties, it's property taxes. New legislation passed by the Ohio House and Senate is intended to cap how fast property taxes can rise. But critically: it does not reduce existing high tax bills, local levies can still override caps, and refund calculations are unclear and handled behind-the-scenes.</p>
+<p>For many homeowners, particularly those who bought before major reassessments, this isn't relief — it's a slight slowdown of increases that already hit their budgets hard. For buyers, especially first-time buyers, property taxes are becoming as big of a barrier as home prices themselves.</p>
+
+<h2>What's Next for Ohio in 2026?</h2>
+<p>Ohio enters 2026 with a market defined by uneven stabilization. Counties remain mostly strong. ZIP codes show early signs of softening. Inventory is inching up in some regions. Taxes remain unpredictable and burdensome.</p>
+<p>Whether the market changes meaningfully next year will depend on two pressures. First — does more supply hit the market? Even a small uptick in listings, like what we're seeing in Central Ohio, changes the dynamic quickly. Second — do property taxes force owners to make different decisions? High taxes can push people to move — but they can also freeze people in place, reducing supply even further.</p>
+<p>For now, Ohio isn't a boom or a bust. It's a market transitioning slowly and unevenly, shaped mostly by what isn't for sale rather than by what is.</p>
+</div>
+
+<div class="subscribe-bar">
+  <h2>Get the Analysis in Your Inbox</h2>
+  <p>Weekly housing market data — county-level, data-driven, no hype.</p>
+  <form id="nl-form" onsubmit="handleNL(event)" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;max-width:480px;margin:0 auto;">
+    <input type="email" id="nl-email" placeholder="your@email.com" required style="flex:1;min-width:220px;padding:12px 16px;border:1px solid rgba(255,255,255,0.2);border-radius:2px;background:rgba(255,255,255,0.08);color:#fff;font-family:'Montserrat',sans-serif;font-size:14px;" />
+    <input type="text" id="nl-hp" name="website" style="position:absolute;left:-9999px;opacity:0;" tabindex="-1" autocomplete="off" /><button type="submit" id="nl-btn" style="padding:12px 28px;background:#fff;color:#BB0000;border:none;border-radius:2px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;cursor:pointer;">Subscribe →</button>
+  </form>
+  <p id="nl-thanks" style="display:none;color:#fff;font-weight:700;font-size:15px;margin-top:8px;">You're in. Check your inbox.</p>
+  <script>
+  var _nlLoadTime=Date.now();async function handleNL(e){e.preventDefault();var b=document.getElementById('nl-btn');b.textContent='Subscribing...';b.disabled=true;if(document.getElementById('nl-hp').value||Date.now()-_nlLoadTime<2000){b.textContent='Subscribe →';b.disabled=false;return;}try{await fetch('/.netlify/functions/submit-contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:document.getElementById('nl-email').value.trim(),first_name:'',last_name:'',phone:'',lead_source:'Ohio Housing Nerd — Blog',source_site:'ohiohousingnerd.com',contact_type:'Subscriber',notes:'Newsletter signup from blog',newsletter:true})})}catch(err){console.error(err)}document.getElementById('nl-form').style.display='none';document.getElementById('nl-thanks').style.display='block'}
+  </script>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Ohio <span>Housing</span> Nerd</div>
+    <div class="footer-links">
+      <a href="/ohio-housing-market-updates">Market Updates</a>
+      <a href="/about">About</a>
+      <a href="/contact">Work With Me</a>
+      <a href="/free">Free Guide</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="footer-compliance">
+    <p><strong style="color:rgba(255,255,255,0.5);">Jasson Farrier · Kiger Realty · License #2018004483 · 614-699-3007</strong><br>
+    We comply fully with the Federal Fair Housing Act and all Ohio fair housing laws. We provide equal professional service to all clients without discrimination based on race, color, religion, sex, disability, familial status, national origin, military status, ancestry, or any other protected class.<br><br>
+    © 2026 JassonFarrier.com · <a href="/privacy" style="color:rgba(255,255,255,0.7); text-decoration:underline;">Privacy Policy</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

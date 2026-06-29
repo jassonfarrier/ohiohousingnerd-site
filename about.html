@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Jasson Farrier | Ohio Housing Nerd</title>
+<meta name="description" content="Jasson Farrier is an Ohio Realtor, real estate investor, and the data-driven housing analyst behind Ohio Housing Nerd.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root { --scarlet: #BB0000; --dark: #0a0a0a; --gray: #666; --light: #f4f4f4; --white: #ffffff; --border: #e0e0e0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--dark); line-height: 1.7; }
+nav { background: var(--dark); padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+.nav-logo { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 15px; letter-spacing: 2px; text-transform: uppercase; color: var(--white); text-decoration: none; }
+.nav-logo span { color: var(--scarlet); }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.6); text-decoration: none; }
+.nav-links a:hover { color: var(--white); }
+.nav-cta { background: var(--scarlet) !important; color: var(--white) !important; padding: 8px 18px; border-radius: 2px; }
+.hero { background: var(--dark); padding: 80px 40px 0; }
+.hero-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 60px; align-items: end; }
+.hero-img { width: 100%; display: block; border-top: 4px solid var(--scarlet); }
+.hero-copy { padding-bottom: 60px; }
+.tag { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--scarlet); margin-bottom: 20px; display: block; }
+h1 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: clamp(28px, 3.5vw, 44px); line-height: 1.1; color: var(--white); margin-bottom: 24px; }
+.hero-body { font-size: 18px; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 32px; }
+.creds { display: flex; flex-direction: column; gap: 10px; }
+.cred { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 1px; color: rgba(255,255,255,0.4); text-transform: uppercase; display: flex; align-items: center; gap: 10px; }
+.cred::before { content: ''; width: 20px; height: 2px; background: var(--scarlet); flex-shrink: 0; }
+.content { max-width: 680px; margin: 0 auto; padding: 80px 40px; }
+.content p { font-size: 18px; margin-bottom: 24px; color: #222; }
+.pull { border-left: 4px solid var(--scarlet); padding: 20px 28px; margin: 40px 0; font-size: 22px; font-style: italic; color: var(--dark); background: var(--light); line-height: 1.5; }
+.section-head { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--scarlet); margin: 48px 0 16px; display: block; }
+.contact-box { background: var(--dark); padding: 48px; margin: 60px 0; border-radius: 4px; text-align: center; }
+.contact-box h2 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 22px; color: var(--white); margin-bottom: 12px; }
+.contact-box p { color: rgba(255,255,255,0.55); margin-bottom: 28px; font-size: 16px; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.contact-btn { display: block; padding: 16px; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; border-radius: 2px; text-align: center; }
+.contact-btn-primary { background: var(--scarlet); color: var(--white); }
+.contact-btn-secondary { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.1); }
+footer { background: var(--dark); padding: 48px 40px 32px; border-top: 3px solid var(--scarlet); }
+.footer-inner { max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+.footer-logo { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; color: var(--white); }
+.footer-logo span { color: var(--scarlet); }
+.footer-links-row { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer-links-row a { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.4); text-decoration: none; }
+.footer-links-row a:hover { color: var(--white); }
+.footer-legal { font-family: 'Montserrat', sans-serif; font-size: 10px; color: rgba(255,255,255,0.25); margin-top: 32px; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.8; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 24px; }
+@media (max-width: 768px) { nav { padding: 0 20px; } .nav-links { display: none; } .hero-inner { grid-template-columns: 1fr; } .hero-img { max-width: 240px; } .content { padding: 60px 24px; } .contact-grid { grid-template-columns: 1fr; } .footer-inner { flex-direction: column; align-items: flex-start; } }
+</style>
+</head>
+<body>
+
+<div style="background:#1a1a1a; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 7px 40px; text-align:center; font-family:'Montserrat',sans-serif; font-size:11px; font-weight:600; letter-spacing:1px; color:rgba(255,255,255,0.45);">
+  <span style="font-size:17px;font-weight:700;color:#BB0000;">Kiger Realty</span> &nbsp;·&nbsp; Jasson Farrier &nbsp;·&nbsp; Realtor &nbsp;·&nbsp; License #2018004483 &nbsp;·&nbsp; 614-699-3007
+</div>
+
+<nav>
+  <a href="/" class="nav-logo">Ohio <span>Housing</span> Nerd</a>
+  <div class="nav-links">
+    <a href="/ohio-housing-market-updates">Market Updates</a>
+    <a href="/about">About</a>
+    <a href="/contact">Work With Me</a>
+    <a href="/free" class="nav-cta">Free Guide</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <img src="https://images.squarespace-cdn.com/content/v1/5b96b43a75f9ee5fa8fbbadb/1629466533420-8AF62KY7ETA2APRXP2EX/0C2A5519_DONE.JPG" alt="Jasson Farrier" class="hero-img" />
+    <div class="hero-copy">
+      <span class="tag">About</span>
+      <h1>Jasson Farrier</h1>
+      <p class="hero-body">Ohio Realtor. Real estate investor. The guy who actually pulls the 88-county data every week so you don't have to.</p>
+      <div class="creds">
+        <span class="cred">Realtor · Kiger Realty</span>
+        <span class="cred">Real Estate Investor · Central Ohio</span>
+        <span class="cred">Ohio Housing Nerd · YouTube</span>
+        <span class="cred">Licking · Franklin · Knox · Delaware Counties</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+
+  <p>I'm not a perma-doomer. I'm not a permabull. I'm the guy who looks at the actual data and tells you what it says — even when it's not what people want to hear, and even when it contradicts what everyone else is saying.</p>
+
+  <p>Every week I go through all 88 Ohio counties. Inventory. New listings. Days on market. Price reductions. Foreclosures. Pending sales. I pull it from Redfin, Realtor.com, Zillow, ATTOM, PropStream, and the Central Ohio MLS. I cross-reference it. I look for what the headlines are missing. Then I put it on YouTube.</p>
+
+  <div class="pull">"I'm not here to sell you on buying a home. I'm here to make sure you understand what you're walking into."</div>
+
+  <p>I've been a Realtor in Ohio working buyers and sellers across Licking, Franklin, Knox, Delaware, Morrow, and Fairfield counties. I invest in real estate myself — buy-and-hold rentals across Central Ohio. So when I analyze this market, I'm not doing it from a distance. I'm in it every day.</p>
+
+  <p>A lot of housing analysts online either want the market to crash so they can say they called it, or they're cheerleaders who won't acknowledge any risk. I'm neither. There are people who don't like me because I'm a Realtor and investor — fine. My job is to give you the clearest possible picture of what's actually happening so you can make a smart decision for your own life.</p>
+
+  <span class="section-head">The Ohio Housing Nerd Channel</span>
+  <p>Ohio Housing Nerd started about a year ago and is growing faster than my national channel despite having less content. That told me something. There's a real gap in the market for serious, data-driven Ohio housing analysis. Not clickbait. Not doom. Not cheerleading. Just the data, broken down clearly, with context that actually makes sense for people living and working in Ohio.</p>
+
+  <p>I go live every week and pull up real zip codes, real counties, real numbers — live on camera. Viewers drop their zip code in the comments and I analyze it on the spot. Come watch.</p>
+
+  <span class="section-head">Working With Me as a Realtor</span>
+  <p>I serve buyers and sellers across Central Ohio — Columbus, Newark, and the surrounding counties. My approach is the same as the channel — data first, no pressure, no fluff. I'll tell you what a home is actually worth, what the market is doing in your specific area, and what your smartest move is. If now isn't the right time for you, I'll tell you that too.</p>
+
+  <div class="contact-box">
+    <h2>Ready to Talk?</h2>
+    <p>Whether you're buying, selling, or just trying to make sense of the market — reach out.</p>
+    <div class="contact-grid">
+      <a href="tel:6146993007" class="contact-btn contact-btn-primary">Call 614-699-3007</a>
+      <a href="/contact" class="contact-btn contact-btn-secondary">Send a Message</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Ohio <span>Housing</span> Nerd</div>
+    <div class="footer-links-row">
+      <a href="/ohio-housing-market-updates">Market Updates</a>
+      <a href="/about">About</a>
+      <a href="/contact">Work With Me</a>
+      <a href="/free">Free Guide</a>
+      <a href="/privacy">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="footer-compliance" style="max-width:900px; margin: 24px auto 0; display:flex; align-items:flex-start; gap:24px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.07);">
+    <img src="/fair-housing.webp" alt="Equal Housing Opportunity" style="width:60px;flex-shrink:0;filter:invert(1) opacity(0.35);" />
+    <p style="font-family:'Montserrat',sans-serif; font-size:12px; color:rgba(255,255,255,0.55); line-height:1.8;">
+      <strong style="color:rgba(255,255,255,0.7);">Jasson Farrier &nbsp;·&nbsp; Kiger Realty &nbsp;·&nbsp; License #2018004483 &nbsp;·&nbsp; 614-699-3007</strong><br>
+      We comply fully with the Federal Fair Housing Act and all Ohio fair housing laws. We provide equal professional service to all clients without discrimination based on race, color, religion, sex, disability, familial status, national origin, military status, ancestry, or any other protected class.<br><br>
+      © 2026 Ohio Housing Nerd &nbsp;·&nbsp; Kiger Realty is a licensed real estate brokerage in the State of Ohio.<br>
+      Content on this site is for informational and entertainment purposes only. It does not constitute legal, financial, or real estate advice. Always consult a licensed professional before making any real estate decision. &nbsp;·&nbsp; <a href="/privacy" style="color:rgba(255,255,255,0.7); text-decoration:underline;">Privacy Policy</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

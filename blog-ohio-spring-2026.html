@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ohio Housing Market March 2026 | Ohio Housing Nerd</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root { --scarlet: #BB0000; --dark: #111; --gray: #666; --light: #f4f4f4; --border: #e0e0e0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Montserrat', sans-serif; background: #fff; color: var(--dark); line-height: 1.8; }
+.header-bar { background: var(--scarlet); padding: 12px 0; text-align: center; }
+.header-bar span { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 12px; letter-spacing: 3px; color: white; text-transform: uppercase; }
+.hero { max-width: 780px; margin: 56px auto 0; padding: 0 24px; }
+.category-tag { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--scarlet); margin-bottom: 14px; display: block; }
+h1 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: clamp(26px, 4vw, 40px); line-height: 1.15; color: var(--dark); margin-bottom: 18px; }
+.byline { font-family: 'Montserrat', sans-serif; font-size: 13px; color: var(--gray); margin-bottom: 40px; padding-bottom: 20px; border-bottom: 3px solid var(--scarlet); }
+.content { max-width: 780px; margin: 0 auto; padding: 0 24px 80px; }
+p { font-size: 18px; margin-bottom: 24px; color: #1a1a1a; }
+.chart-block { margin: 44px 0; background: var(--light); border-left: 4px solid var(--scarlet); padding: 20px; border-radius: 0 4px 4px 0; }
+.chart-block img { width: 100%; border-radius: 4px; display: block; }
+.chart-block iframe { width: 100%; border: none; border-radius: 4px; display: block; }
+.chart-caption { font-family: 'Montserrat', sans-serif; font-size: 12px; color: var(--gray); margin-top: 10px; font-style: italic; }
+.chart-title { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--scarlet); margin-bottom: 12px; }
+.stat-callout { background: var(--dark); color: white; padding: 28px 32px; margin: 44px 0; border-radius: 4px; }
+.big-number { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 60px; color: var(--scarlet); line-height: 1; display: block; }
+.stat-label { font-family: 'Montserrat', sans-serif; font-size: 15px; color: #ccc; margin-top: 8px; display: block; }
+.stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 44px 0; }
+.stat-box { background: var(--light); padding: 18px; border-top: 3px solid var(--scarlet); text-align: center; }
+.stat-box .num { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 26px; color: var(--scarlet); display: block; }
+.stat-box .lbl { font-family: 'Montserrat', sans-serif; font-size: 11px; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; display: block; }
+.pull-quote { border-left: 4px solid var(--scarlet); padding: 14px 22px; margin: 36px 0; font-size: 21px; font-style: italic; color: var(--dark); background: #fafafa; }
+.chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 44px 0; }
+.chart-grid .chart-block { margin: 0; }
+.cta-box { background: var(--scarlet); color: white; padding: 32px 36px; margin: 56px 0 36px; border-radius: 4px; text-align: center; }
+.cta-box h3 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 19px; margin-bottom: 10px; }
+.cta-box p { color: rgba(255,255,255,0.9); font-size: 16px; margin-bottom: 18px; }
+.cta-btn { display: inline-block; background: white; color: var(--scarlet); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; padding: 13px 26px; border-radius: 2px; text-decoration: none; }
+.footer-links { border-top: 1px solid var(--border); padding-top: 28px; margin-top: 36px; font-family: 'Montserrat', sans-serif; font-size: 13px; color: var(--gray); }
+.footer-links a { color: var(--scarlet); text-decoration: none; }
+.footer-links p { font-size: 13px; margin-bottom: 8px; }
+@media (max-width: 600px) {
+  .stat-row { grid-template-columns: 1fr 1fr; }
+  .big-number { font-size: 44px; }
+  .chart-grid { grid-template-columns: 1fr; }
+}
+
+.chart-interactive-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #BB0000;
+  text-decoration: none;
+}
+.chart-interactive-link:hover { text-decoration: underline; }
+
+.footer-compliance { max-width: 900px; margin: 24px auto 0; display: flex; align-items: flex-start; gap: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.07); }
+.footer-compliance img { width: 48px; flex-shrink: 0; filter: invert(1) opacity(0.35); }
+.footer-compliance p { font-family: 'Montserrat', sans-serif; font-size: 10px; color: rgba(255,255,255,0.25); line-height: 1.8; }
+nav { background: #0a0a0a; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+.nav-logo { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 15px; letter-spacing: 2px; text-transform: uppercase; color: #ffffff; text-decoration: none; }
+.nav-logo span { color: #BB0000; }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.7); text-decoration: none; }
+.nav-links a:hover { color: #ffffff; }
+.nav-cta { background: #BB0000 !important; color: #ffffff !important; padding: 8px 18px; border-radius: 2px; }
+footer { background: #0a0a0a; padding: 48px 40px 32px; border-top: 3px solid #BB0000; margin-top: 0; }
+.footer-inner { max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+.footer-logo { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; color: #ffffff; }
+.footer-logo span { color: #BB0000; }
+.footer-links-row { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer-links-row a { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.4); text-decoration: none; }
+.footer-links-row a:hover { color: #ffffff; }
+@media (max-width: 768px) { nav { padding: 0 20px; } .nav-links { display: none; } .footer-inner { flex-direction: column; align-items: flex-start; } }
+</style>
+</head>
+<body>
+
+<div style="background:#1a1a1a; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 7px 40px; text-align:center; font-family:'Montserrat',sans-serif; font-size:11px; font-weight:600; letter-spacing:1px; color:rgba(255,255,255,0.45);">
+  <span style="font-size:17px;font-weight:700;color:#BB0000;">Kiger Realty</span> &nbsp;·&nbsp; Jasson Farrier &nbsp;·&nbsp; Realtor &nbsp;·&nbsp; License #2018004483 &nbsp;·&nbsp; 614-699-3007
+</div>
+
+<nav>
+  <a href="/" class="nav-logo">Ohio <span>Housing</span> Nerd</a>
+  <div class="nav-links">
+    <a href="/ohio-housing-market-updates">Market Updates</a>
+    <a href="/about">About</a>
+    <a href="/contact">Work With Me</a>
+    <a href="/free" class="nav-cta">Free Guide</a>
+  </div>
+</nav>
+
+<div class="header-bar"><span>Ohio Housing Nerd — Real Data. No Spin.</span></div>
+
+<div class="hero">
+  <span class="category-tag">Ohio Market Analysis · March 2026</span>
+  <h1>Ohio Housing Market March 2026: Low Inventory, Record Prices, and the Problem Nobody Is Talking About</h1>
+  <div class="byline">By <strong>Jasson Farrier</strong> &nbsp;|&nbsp; Realtor &amp; Investor &nbsp;|&nbsp; March 2026</div>
+</div>
+
+<div class="content">
+
+  <p>It's March and the Ohio housing market should be waking up. More listings. More buyers. More activity. That's the pattern. That's what happens every year.</p>
+  <p>Except this year it's not happening. And after going through all 88 Ohio counties, I think I know why — and it's not the reason most people are talking about.</p>
+
+  <div class="stat-callout">
+    <span class="big-number">94%</span>
+    <span class="stat-label">Ohio counties have FEWER active homes for sale today than February 2019 — before COVID ever happened.</span>
+  </div>
+
+  <p>Let that sink in for a second. Not fewer than last year. Fewer than before COVID ever happened. We went backwards.</p>
+
+  <p>And this isn't a trend that's correcting itself. It's gotten worse over the last few months, not better. What that means on the ground is pretty simple — fewer choices for buyers and fewer transactions overall. A lot of people want to pin this on affordability, and look, there's no doubt some truth to that. Higher rates have kept people on the sidelines. So have property taxes, which have quietly become a real issue across Ohio as valuations have been reset higher in county after county. And then there's the price itself — the typical Ohio home is up 35% to 56% over the last five years depending on where you live. At some point you have to ask the question — how far can Ohio keep pushing homebuyers before they just stop? There's no clean answer to that. But the combination of high rates, elevated property taxes, and prices at all-time highs is a weight that's building. That said, I think there's something even bigger hiding underneath that narrative. The lack of inventory itself is crushing sales activity. Buyers just aren't excited to get out and look when there's nothing worth looking at. That's not just an affordability problem. That's a supply problem.</p>
+
+  <p>New listings tell the same story. We're still down nearly 21% versus 2019 — meaning we haven't even gotten back to pre-COVID levels yet, let alone grown past them. And here's what a lot of people miss. Both inventory and new listings were already falling before COVID hit. The pandemic didn't start this. It just made it worse and now five years later we're still digging out. 55 out of 88 counties are still declining in new listings year over year right now. Not recovering. Still sliding.</p>
+
+  <!-- INVENTORY CHART -->
+  <div class="chart-block">
+    <div class="chart-title">Ohio Active Housing Inventory — 2016 to 2026</div>
+    <img src="/img-L3wzw.png" alt="Ohio Active Housing Inventory" style="width:100%;display:block;border-radius:4px;">
+    <a href="https://www.datawrapper.de/_/L3wzw/" target="_blank" class="chart-interactive-link">View Interactive Chart →</a>
+    <div class="chart-caption">Source: Realtor.com · Chart: Jasson Farrier, Ohio Housing Nerd</div>
+  </div>
+
+  <p>Look at that chart. Ohio had over 45,000 active listings in 2016. Today we're barely at 16,000. And here's what a lot of people miss — the slide started before COVID ever showed up. By February 2019 inventory was already down significantly from the peak. Then the pandemic hit and it fell off a cliff, bottoming out around 8,500 in 2022. We've recovered some ground since then but we're still less than half of where we started. This isn't a pandemic hangover. It's a structural problem that's been building for almost a decade.</p>
+
+  <!-- COUNTY MAP -->
+  <div class="chart-block">
+    <div class="chart-title">Ohio County Inventory vs. February 2019</div>
+    <img src="/img-QZp8M.png" alt="Ohio County Inventory Change Map" style="width:100%;display:block;border-radius:4px;">
+    <a href="https://www.datawrapper.de/_/QZp8M/" target="_blank" class="chart-interactive-link">View Interactive Map →</a>
+
+    <div class="chart-caption">94% of Ohio counties have fewer homes for sale now than in 2019 — some by more than half. Map: Jasson Farrier, Ohio Housing Nerd · Source: Realtor.com · Created with Datawrapper</div>
+  </div>
+
+  <p>And honestly that's not even the part that gets me most. Because it's not just that sellers are staying home this spring. The sellers who did show up are leaving.</p>
+
+  <div class="pull-quote">"1 out of every 5 listings in Franklin County disappeared from the market instead of selling."</div>
+
+  <p>I had to dig into the MLS data to pull this because you won't find it anywhere else. In Franklin County over the last 90 days there were 5,487 total listings. 1,038 of those were pulled off the market before they ever sold — expired, canceled, or withdrawn. Active listings in Franklin County went from 2,080 in December to 1,761 in January to 1,646 in February. The market is shrinking heading into spring, not growing. I'm assuming similar trends are playing out across the state — but even just in Franklin County the math is sobering. Fewer new listings coming in and existing listings walking out the back door.</p>
+
+  <div class="stat-row">
+    <div class="stat-box"><span class="num">5,487</span><span class="lbl">Total Franklin Co. listings (90 days)</span></div>
+    <div class="stat-box"><span class="num">1,038</span><span class="lbl">Pulled before selling</span></div>
+    <div class="stat-box"><span class="num">~1 in 5</span><span class="lbl">Listings vanished instead of sold</span></div>
+  </div>
+
+  <p>Now I know what you're thinking. If sellers aren't showing up, buyers must be pulling back too. And on the surface the numbers suggest that. Pending sales are up just 0.4% statewide. Barely a pulse.</p>
+
+  <p>But look closer. Days on market are still down in 74 out of 88 counties compared to 2019. Homes that are priced right are generally still moving — though I want to be careful with that because it's not a blanket statement. Even well-priced homes in move-in ready condition are sitting longer than sellers want right now, especially at higher price points. The days of listing on a Friday and having multiple offers by Sunday are not universal anymore. Sellers are going to need to be patient and price correctly from day one.</p>
+
+  <p>Price reductions are sitting at 14% statewide, which sounds like sellers are starting to crack. But that's actually lower than it was last year. Nobody's slashing prices. Some are bending slightly but the sellers who stayed are mostly holding.</p>
+
+  <p>It's a weird market. Sellers are stingy. Buyers are stingy. Every submarket is different. But when you zoom out the bottom line is pretty clear. Most homeowners in Ohio either can't afford to sell, don't need to sell, or just don't want to sell. They're locked into a rate they'll never see again. They look at what they'd have to pay to buy the next house and the math doesn't work. So they stay. And the market just sits there, frozen from both ends.</p>
+
+  <!-- OHIO STATEWIDE PRICE CHART -->
+  <div class="chart-block">
+    <div class="chart-title">Ohio Typical Home Value — 2000 to 2026</div>
+    <img src="/img-CZQwi.png" alt="Ohio Typical Home Value" style="width:100%;display:block;border-radius:4px;">
+    <a href="https://www.datawrapper.de/_/CZQwi/" target="_blank" class="chart-interactive-link">View Interactive Chart →</a>
+    <div class="chart-caption">Source: Zillow · Chart: Jasson Farrier, Ohio Housing Nerd</div>
+  </div>
+
+  <p>Here's the part that I think surprises people the most.</p>
+
+  <p>Nearly every single county in Ohio is at an all-time record high home price right now. All but three. Meigs, Harrison, and Wayne are the only holdouts in the entire state. Every other county — 85 out of 88 — has never been more expensive than it is right now. In the middle of winter. Heading into spring. With high rates. With everything people said would finally crack this market.</p>
+
+  <div class="stat-row">
+    <div class="stat-box"><span class="num">$237K</span><span class="lbl">Ohio statewide typical value</span></div>
+    <div class="stat-box"><span class="num">$339K</span><span class="lbl">Columbus typical value</span></div>
+    <div class="stat-box"><span class="num">85/88</span><span class="lbl">Counties at all-time record highs</span></div>
+  </div>
+
+  <p>Ohio home prices are up 35% to 56% over the last five years depending on where you live. That's not a typo. That's what happened while everyone was waiting for the crash. Here's what it looks like broken down by the three major metros.</p>
+
+  <!-- CITY PRICE CHARTS - ALL FULL WIDTH -->
+  <div class="chart-block">
+    <div class="chart-title">Columbus Typical Home Value</div>
+    <img src="/img-YLqx8.png" alt="Columbus OH Typical Home Value" style="width:100%;display:block;border-radius:4px;">
+    <a href="https://www.datawrapper.de/_/YLqx8/" target="_blank" class="chart-interactive-link">View Interactive Chart →</a>
+  </div>
+  <div class="chart-block">
+    <div class="chart-title">Cleveland Typical Home Value</div>
+    <img src="/img-Ktx4U.png" alt="Cleveland OH Typical Home Value" style="width:100%;display:block;border-radius:4px;">
+    <a href="https://www.datawrapper.de/_/Ktx4U/" target="_blank" class="chart-interactive-link">View Interactive Chart →</a>
+  </div>
+  <div class="chart-block">
+    <div class="chart-title">Cincinnati Typical Home Value</div>
+    <img src="/img-zDNU2.png" alt="Cincinnati OH Typical Home Value" style="width:100%;display:block;border-radius:4px;">
+    <a href="https://www.datawrapper.de/_/zDNU2/" target="_blank" class="chart-interactive-link">View Interactive Chart →</a>
+    <div class="chart-caption">Source: Zillow · Charts: Jasson Farrier, Ohio Housing Nerd</div>
+  </div>
+
+  <p>I look for the crash every single week. I'm looking at inventory. I'm looking at forced selling. I'm looking at distress. And I'm not finding it — not in the data, not on the ground as a realtor working this market every day. If there was doom I would share it with you. I genuinely don't care if prices go up or down. I can't control it. I just share what the numbers say.</p>
+
+  <p>Now I want to be honest about something though. There is pressure building under the surface. Tax delinquencies are rising. Foreclosures are ticking up. That's real and I'm not going to pretend it isn't. The question is whether those properties actually come to market or get absorbed — purchased before they ever hit the MLS, rescued out of foreclosure, or kicked down the road. Some will come to market. There will be distress this year. That's not a maybe.</p>
+
+  <p>And there are bigger factors lurking out there too. A serious economic slowdown. A credit crisis. Job loss at scale. Any of those things could change the picture. I'm not dismissing them.</p>
+
+  <div class="pull-quote">"Those are symptoms. The disease — the thing that actually crashes home prices — is inventory. Forced selling at scale."</div>
+
+  <p>To crash prices you need a flood of homes hitting the market at the same time. Leading up to 2008 there were 4 million homes on the market nationally. Right now we're barely at a million. You need mass supply to move prices down meaningfully, and mass supply comes from mass forced selling. We're not seeing that. Not yet. And until we do, the market stays locked. Stubborn prices. Low volume. A frustrating market where nothing feels right and nobody feels like they're winning.</p>
+
+  <p>That's exactly where Ohio is right now.</p>
+
+  <p>If you're buying in Ohio right now, don't wait on a flood of new listings this spring. The data says it's not coming. The buyers who do well in this market aren't the ones who timed it perfectly — they're the ones who got educated, got ready, and moved when the right home showed up. Stop going by headlines. The headlines don't know your income, your credit, your market, or your life.</p>
+
+  <p>If you're selling, the D-listing data is a warning. Price it right out of the gate. Even well-priced homes in great school systems are sitting a little longer than we've been used to. The sellers pulling their homes off the market are the ones who got cute with pricing. Don't be that seller.</p>
+
+  <p>The Ohio spring market is shaping up nothing like what anyone expected. And if you want to keep up with what's actually happening — I go live every week and break down the Ohio housing market with real data, real zip codes, and no spin. Drop your zip code in the comments and I'll pull it live.</p>
+
+  <div class="cta-box">
+    <h3>Not sure if now is the right time to buy?</h3>
+    <p>Download my free guide — "Should I Buy in 2026 or Wait?" — five questions based on your actual situation, not the headlines.</p>
+    <a class="cta-btn" href="http://jassonfarrier.com/free">Get the Free Guide →</a>
+  </div>
+
+  <div style="background:#1a1a1a;border-radius:4px;padding:40px;margin:32px 0;text-align:center;">
+    <h3 style="font-size:18px;font-weight:900;color:#fff;margin-bottom:8px;">Get the Analysis in Your Inbox</h3>
+    <p style="color:rgba(255,255,255,0.6);font-size:14px;margin-bottom:20px;">Weekly Ohio housing data — all 88 counties, data-driven, no hype.</p>
+    <form id="nl-form" onsubmit="handleNL(event)" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;max-width:480px;margin:0 auto;">
+      <input type="email" id="nl-email" placeholder="your@email.com" required style="flex:1;min-width:220px;padding:12px 16px;border:1px solid rgba(255,255,255,0.2);border-radius:2px;background:rgba(255,255,255,0.08);color:#fff;font-family:'Montserrat',sans-serif;font-size:14px;" />
+      <input type="text" id="nl-hp" name="website" style="position:absolute;left:-9999px;opacity:0;" tabindex="-1" autocomplete="off" /><button type="submit" id="nl-btn" style="padding:12px 28px;background:#BB0000;color:#fff;border:none;border-radius:2px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;cursor:pointer;">Subscribe →</button>
+    </form>
+    <p id="nl-thanks" style="display:none;color:#fff;font-weight:700;font-size:15px;margin-top:8px;">You're in. Check your inbox.</p>
+  </div>
+  <script>
+  var _nlLoadTime=Date.now();async function handleNL(e){e.preventDefault();var b=document.getElementById('nl-btn');b.textContent='Subscribing...';b.disabled=true;if(document.getElementById('nl-hp').value||Date.now()-_nlLoadTime<2000){b.textContent='Subscribe →';b.disabled=false;return;}try{await fetch('/.netlify/functions/submit-contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:document.getElementById('nl-email').value.trim(),first_name:'',last_name:'',phone:'',lead_source:'Ohio Housing Nerd — Blog',source_site:'ohiohousingnerd.com',contact_type:'Subscriber',notes:'Newsletter signup from blog',newsletter:true})})}catch(err){console.error(err)}document.getElementById('nl-form').style.display='none';document.getElementById('nl-thanks').style.display='block'}
+  </script>
+
+  <div class="footer-links">
+    <p>Buying or selling in Central Ohio? I'm a Realtor serving the Central Ohio area.</p>
+    <p style="margin-top:14px;">📺 <a href="http://youtube.com/@ohiohousingnerd">Ohio Housing Nerd</a> &nbsp;|&nbsp; 📺 <a href="http://youtube.com/@housingnerd">Housing Nerd (national)</a></p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Ohio <span>Housing</span> Nerd</div>
+    <div class="footer-links-row">
+      <a href="/ohio-housing-market-updates">Market Updates</a>
+      <a href="/about">About</a>
+      <a href="/contact">Work With Me</a>
+      <a href="/free">Free Guide</a>
+      <a href="/privacy">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="footer-compliance" style="max-width:900px; margin: 24px auto 0; display:flex; align-items:flex-start; gap:24px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.07);">
+    <img src="/fair-housing.webp" alt="Equal Housing Opportunity" style="width:60px;flex-shrink:0;filter:invert(1) opacity(0.35);" />
+    <p style="font-family:'Montserrat',sans-serif; font-size:12px; color:rgba(255,255,255,0.55); line-height:1.8;">
+      <strong style="color:rgba(255,255,255,0.7);">Jasson Farrier &nbsp;·&nbsp; Kiger Realty &nbsp;·&nbsp; License #2018004483 &nbsp;·&nbsp; 614-699-3007</strong><br>
+      We comply fully with the Federal Fair Housing Act and all Ohio fair housing laws. We provide equal professional service to all clients without discrimination based on race, color, religion, sex, disability, familial status, national origin, military status, ancestry, or any other protected class.<br><br>
+      © 2026 Ohio Housing Nerd &nbsp;·&nbsp; Kiger Realty is a licensed real estate brokerage in the State of Ohio.<br>
+      Content on this site is for informational and entertainment purposes only. It does not constitute legal, financial, or real estate advice. Always consult a licensed professional before making any real estate decision. &nbsp;·&nbsp; <a href="/privacy" style="color:rgba(255,255,255,0.7); text-decoration:underline;">Privacy Policy</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

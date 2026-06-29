@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ohio's Housing Market Is Under Strain — But It's Not Crashing | Ohio Housing Nerd</title>
+<meta name="description" content="Ohio's housing market is split — some suburbs at record highs, some urban areas correcting. Data-driven analysis from Jasson Farrier.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root { --scarlet: #BB0000; --scarlet-deep: #990000; --gray: #666; --dark: #0a0a0a; --light: #f6f6f6; --border: #e0e0e0; --white: #ffffff; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--dark); line-height: 1.7; }
+nav { background: var(--scarlet); padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+.nav-logo { font-weight: 900; font-size: 15px; letter-spacing: 2px; text-transform: uppercase; color: var(--white); text-decoration: none; }
+.nav-logo span { color: var(--gray); }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { font-weight: 600; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.6); text-decoration: none; }
+.nav-links a:hover { color: var(--white); }
+.nav-cta { background: var(--white) !important; color: var(--scarlet) !important; padding: 8px 18px; border-radius: 2px; }
+.agent-bar { background: var(--scarlet-deep); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 9px 40px; text-align: center; font-size: 12px; font-weight: 400; letter-spacing: 1px; color: rgba(255,255,255,0.55); }
+.agent-bar span { color: var(--white); font-size: 13px; font-weight: 600; letter-spacing: 1px; }
+.page-header { background: var(--scarlet); padding: 80px 40px; }
+.page-header-inner { max-width: 720px; margin: 0 auto; }
+.tag { font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--gray); margin-bottom: 16px; display: block; }
+.page-header h1 { font-weight: 900; font-size: clamp(26px, 3.5vw, 42px); color: var(--white); line-height: 1.15; margin-bottom: 16px; }
+.header-sub { font-size: 16px; color: rgba(255,255,255,0.55); }
+.subscribe-bar { background: var(--scarlet); padding: 60px 40px; text-align: center; }
+.subscribe-bar h2 { font-weight: 900; font-size: clamp(22px, 3vw, 32px); color: var(--white); margin-bottom: 12px; }
+.subscribe-bar p { font-size: 17px; color: rgba(255,255,255,0.6); margin-bottom: 28px; }
+.subscribe-bar a { display: inline-block; background: var(--white); color: var(--scarlet); font-weight: 700; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; padding: 14px 28px; text-decoration: none; border-radius: 2px; }
+footer { background: var(--dark); padding: 48px 40px 32px; border-top: 3px solid var(--scarlet); }
+.footer-inner { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+.footer-logo { font-weight: 900; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; color: var(--white); }
+.footer-logo span { color: var(--gray); }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer-links a { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.4); text-decoration: none; }
+.footer-links a:hover { color: var(--white); }
+.footer-compliance { max-width: 1000px; margin: 24px auto 0; display: flex; align-items: flex-start; gap: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.07); }
+.footer-compliance p { font-size: 10px; color: rgba(255,255,255,0.25); line-height: 1.8; }
+@media (max-width: 768px) { nav { padding: 0 20px; } .nav-links { display: none; } .page-header { padding: 60px 20px; } .footer-inner { flex-direction: column; } .agent-bar { padding: 7px 20px; font-size: 11px; } }
+
+.article { max-width: 720px; margin: 0 auto; padding: 80px 40px; }
+.article h2 { font-weight: 900; font-size: clamp(20px, 2.5vw, 26px); color: var(--dark); margin: 40px 0 16px; line-height: 1.25; }
+.article h3 { font-weight: 700; font-size: clamp(17px, 2vw, 20px); color: var(--dark); margin: 28px 0 12px; line-height: 1.3; }
+.article p { font-size: 16px; color: #333; line-height: 1.8; margin-bottom: 20px; }
+.article ul, .article ol { margin: 0 0 20px 24px; }
+.article li { font-size: 16px; color: #333; line-height: 1.8; margin-bottom: 8px; }
+.article blockquote { border-left: 4px solid var(--scarlet); padding: 16px 24px; margin: 28px 0; background: #f8f9fa; }
+.article blockquote p { font-size: 18px; font-weight: 700; color: var(--scarlet); margin: 0; line-height: 1.5; }
+.article .stat-row { display: flex; gap: 24px; flex-wrap: wrap; margin: 28px 0; }
+.article .stat-box { flex: 1; min-width: 140px; background: var(--scarlet); color: var(--white); padding: 24px; border-radius: 4px; text-align: center; }
+.article .stat-num { font-weight: 900; font-size: 32px; line-height: 1; margin-bottom: 8px; }
+.article .stat-label { font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; opacity: 0.7; }
+.back-link { display: inline-block; font-weight: 700; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray); text-decoration: none; margin-bottom: 20px; }
+.back-link:hover { color: var(--white); }
+@media (max-width: 768px) { .article { padding: 60px 20px; } .article .stat-row { flex-direction: column; } }
+
+</style>
+</head>
+<body>
+
+<div class="agent-bar"><span>Jasson Farrier</span> &nbsp;·&nbsp; Realtor &nbsp;·&nbsp; <span>Kiger Realty</span> &nbsp;·&nbsp; License #2018004483 &nbsp;·&nbsp; 614-699-3007</div>
+
+<nav>
+  <a href="/" class="nav-logo">Ohio <span>Housing</span> Nerd</a>
+  <div class="nav-links">
+    <a href="/ohio-housing-market-updates">Market Updates</a>
+    <a href="/about">About</a>
+    <a href="/contact">Work With Me</a>
+    <a href="/free" class="nav-cta">Free Guide</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <a href="/ohio-housing-market-updates" class="back-link">← Back to Market Updates</a>
+    <span class="tag">Ohio Market Analysis · February 2026</span>
+    <h1>Ohio's Housing Market Is Under Strain — But It's Not Crashing</h1>
+    <p class="header-sub">February 20, 2026</p>
+  </div>
+</div>
+
+<div class="article">
+<p>If you follow national housing headlines, you'd assume Ohio is on the verge of a downturn. Inventory is rising in parts of the country. Pending sales are soft. Affordability is stretched. The crash narrative is everywhere. But when you break down what's actually happening across Ohio — zip code by zip code — the picture is far more fragmented. Some markets are hitting record-high prices. Others are down sharply from their peaks. And beneath it all, financial stress is building in ways that don't immediately show up in home values.</p>
+<p>Housing markets don't collapse simply because buyers hesitate. They collapse when sellers are forced to sell in large numbers. That requires three things happening together: a wave of forced selling, inventory overwhelming demand, and broad, synchronized price declines. Ohio doesn't have that combination right now. Instead, it has something messier — a split market.</p>
+
+<h2>Where Prices Are Still Climbing</h2>
+<p>Take Dublin, zip code 43017. Home prices there are up roughly 15% since 2022, with a current median around $612,000 — an all-time high. Inventory helps explain why. There are 64 homes for sale today. Before the pandemic, there were 87, and in 2016 there were 114. Supply is still dramatically lower than historical norms.</p>
+<p>A similar pattern shows up in Medina (44256), where prices are up about 14% since 2022, sitting near a record $375,000. Inventory is just 62 homes today, compared to 167 in 2019. In Xenia (45385), prices are up roughly 16% since 2022, reaching a record near $245,000. Even in Toledo's 43612 zip code, prices are up approximately 23% since 2022. Across these areas, the pattern is consistent: fewer homes for sale than in prior years, and prices holding or rising.</p>
+
+<h2>Where Prices Are Correcting</h2>
+<p>Now compare that to Columbus zip code 43205 near downtown. Prices are down about 5% since 2022. The market peaked around $285,000 in 2023 and has since slipped closer to $270,000. Even a modest increase in supply has softened prices.</p>
+<p>In Wooster (44691), the correction is more dramatic. Prices are down nearly 21% from peak levels, falling from roughly $325,000 to about $259,000. In central Dayton (45402), prices are down about 5%, from a peak near $74,000 to around $68,000 today. Inventory has risen from 24 homes pre-pandemic to about 46 now — nearly double.</p>
+<p>When you zoom out statewide, many zip codes are still up compared to 2022 while others are down, but they are not all moving in the same direction at the same time. Housing crashes require synchronization. Ohio has fragmentation. Without a unified surge in inventory across the state, price declines remain localized rather than systemic.</p>
+
+<h2>Financial Pressure Is Building</h2>
+<p>While price declines are limited to certain areas, financial pressure is beginning to surface elsewhere. Foreclosures remain relatively modest compared to 2008: 192 in Franklin County, 187 in Hamilton County, 189 in Montgomery County, and 94 in Summit County. That's not crisis-level distress.</p>
+<p>But property tax delinquencies tell a more uncomfortable story. In Akron, there are approximately 23,774 tax delinquencies. In Franklin County, around 1,106. And in Cuyahoga County, roughly 109,000 property tax delinquencies. That number is significant.</p>
+<p>Property taxes don't adjust downward because mortgage rates rise or incomes stagnate. They simply rise with assessed values and levies. That pressure often hits fixed-income homeowners, first-time buyers, landlords facing higher carrying costs, and households with job instability. It's strain that builds slowly — not the kind that triggers instant collapse, but the kind that erodes financial flexibility over time.</p>
+
+<h2>Why This Isn't 2008</h2>
+<p>Despite that stress, Ohio doesn't resemble the pre-crash setup of the mid-2000s. Most homeowners today have substantial equity, locked-in low fixed-rate mortgages, and are not facing widespread adjustable-rate resets. As long as most owners aren't forced to sell, inventory remains constrained. And as long as inventory remains constrained, broad price declines are unlikely.</p>
+<p>This doesn't mean the market is healthy or comfortable. Affordability remains stretched. Buyers are cautious. Tax burdens are rising in many counties. Certain zip codes are clearly correcting. But a statewide collapse requires a wave of forced selling that simply isn't here.</p>
+
+<h2>The Bottom Line</h2>
+<p>Ohio's housing market isn't booming uniformly, and it isn't crashing either. It's split. Some suburbs are at record highs because inventory remains far below historical norms. Some urban and smaller markets are correcting because listings have risen relative to recent years. Beneath it all, property tax delinquencies and payment strain signal underlying pressure. The difference between stress and collapse comes down to forced selling. Until that shows up at scale across multiple regions at once, Ohio is more likely to remain fragmented than to fall apart.</p>
+</div>
+
+<div class="subscribe-bar">
+  <h2>Get the Analysis in Your Inbox</h2>
+  <p>Weekly housing market data — county-level, data-driven, no hype.</p>
+  <form id="nl-form" onsubmit="handleNL(event)" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;max-width:480px;margin:0 auto;">
+    <input type="email" id="nl-email" placeholder="your@email.com" required style="flex:1;min-width:220px;padding:12px 16px;border:1px solid rgba(255,255,255,0.2);border-radius:2px;background:rgba(255,255,255,0.08);color:#fff;font-family:'Montserrat',sans-serif;font-size:14px;" />
+    <input type="text" id="nl-hp" name="website" style="position:absolute;left:-9999px;opacity:0;" tabindex="-1" autocomplete="off" /><button type="submit" id="nl-btn" style="padding:12px 28px;background:#fff;color:#BB0000;border:none;border-radius:2px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;cursor:pointer;">Subscribe →</button>
+  </form>
+  <p id="nl-thanks" style="display:none;color:#fff;font-weight:700;font-size:15px;margin-top:8px;">You're in. Check your inbox.</p>
+  <script>
+  var _nlLoadTime=Date.now();async function handleNL(e){e.preventDefault();var b=document.getElementById('nl-btn');b.textContent='Subscribing...';b.disabled=true;if(document.getElementById('nl-hp').value||Date.now()-_nlLoadTime<2000){b.textContent='Subscribe →';b.disabled=false;return;}try{await fetch('/.netlify/functions/submit-contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:document.getElementById('nl-email').value.trim(),first_name:'',last_name:'',phone:'',lead_source:'Ohio Housing Nerd — Blog',source_site:'ohiohousingnerd.com',contact_type:'Subscriber',notes:'Newsletter signup from blog',newsletter:true})})}catch(err){console.error(err)}document.getElementById('nl-form').style.display='none';document.getElementById('nl-thanks').style.display='block'}
+  </script>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Ohio <span>Housing</span> Nerd</div>
+    <div class="footer-links">
+      <a href="/ohio-housing-market-updates">Market Updates</a>
+      <a href="/about">About</a>
+      <a href="/contact">Work With Me</a>
+      <a href="/free">Free Guide</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="footer-compliance">
+    <p><strong style="color:rgba(255,255,255,0.5);">Jasson Farrier · Kiger Realty · License #2018004483 · 614-699-3007</strong><br>
+    We comply fully with the Federal Fair Housing Act and all Ohio fair housing laws. We provide equal professional service to all clients without discrimination based on race, color, religion, sex, disability, familial status, national origin, military status, ancestry, or any other protected class.<br><br>
+    © 2026 JassonFarrier.com · <a href="/privacy" style="color:rgba(255,255,255,0.7); text-decoration:underline;">Privacy Policy</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
