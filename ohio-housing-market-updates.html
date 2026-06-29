@@ -234,13 +234,32 @@ footer {
 <div class="subscribe-bar">
   <h2>Get the Analysis in Your Inbox</h2>
   <p>Weekly Ohio housing data — all 88 counties, data-driven, no hype.</p>
+  <input type="text" id="nl-hp" name="website" tabindex="-1" autocomplete="off" style="display:none;" />
+  <iframe name="kit-nl-frame" style="display:none;"></iframe>
   <form id="nl-form" onsubmit="handleNL(event)" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;max-width:480px;margin:0 auto;">
     <input type="email" id="nl-email" placeholder="your@email.com" required style="flex:1;min-width:220px;padding:12px 16px;border:1px solid rgba(255,255,255,0.2);border-radius:2px;background:rgba(255,255,255,0.08);color:#fff;font-family:'Montserrat',sans-serif;font-size:14px;" />
     <button type="submit" id="nl-btn" style="padding:12px 28px;background:#BB0000;color:#fff;border:none;border-radius:2px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;cursor:pointer;">Subscribe →</button>
   </form>
   <p id="nl-thanks" style="display:none;color:#fff;font-weight:700;font-size:15px;margin-top:8px;">You're in. Check your inbox.</p>
   <script>
-  async function handleNL(e){e.preventDefault();var b=document.getElementById('nl-btn');b.textContent='Subscribing...';b.disabled=true;try{await fetch('/.netlify/functions/submit-contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:document.getElementById('nl-email').value.trim(),first_name:'',last_name:'',phone:'',lead_source:'Blog — ohiohousingnerd.com',source_site:'ohiohousingnerd.com',contact_type:'Subscriber',notes:'Newsletter signup from blog',newsletter:true})})}catch(err){console.error(err)}document.getElementById('nl-form').style.display='none';document.getElementById('nl-thanks').style.display='block'}
+  var _nlLoadTime=Date.now();
+  async function handleNL(e){
+    e.preventDefault();
+    var b=document.getElementById('nl-btn');
+    b.textContent='Subscribing...';b.disabled=true;
+    if(document.getElementById('nl-hp').value||Date.now()-_nlLoadTime<2000){b.textContent='Subscribe →';b.disabled=false;return;}
+    var email=document.getElementById('nl-email').value.trim();
+    try{
+      var kitForm=document.createElement('form');
+      kitForm.action='https://app.kit.com/forms/9195654/subscriptions';
+      kitForm.method='post';kitForm.target='kit-nl-frame';kitForm.style.display='none';
+      var ef=document.createElement('input');ef.name='email_address';ef.value=email;
+      kitForm.appendChild(ef);document.body.appendChild(kitForm);kitForm.submit();
+      await fetch('/.netlify/functions/submit-contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,first_name:'',last_name:'',phone:'',lead_source:'Ohio Housing Nerd — Market Updates',source_site:'ohiohousingnerd.com',contact_type:'Subscriber',notes:'Newsletter signup from market updates page',newsletter:true})});
+    }catch(err){console.error(err)}
+    document.getElementById('nl-form').style.display='none';
+    document.getElementById('nl-thanks').style.display='block';
+  }
   </script>
 </div>
 
